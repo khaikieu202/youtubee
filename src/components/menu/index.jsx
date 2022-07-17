@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { HomeFilled, UserOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 import Logo from "../../assets/images/logow.png";
@@ -48,10 +49,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       {/* logo  */}
-      <LogoDiv>
-        <img src={Logo} alt="logo" />
-        <p>Youtubee</p>
-      </LogoDiv>
+      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <LogoDiv>
+          <img src={Logo} alt="logo" />
+          <p>Youtubee</p>
+        </LogoDiv>
+      </Link>
 
       {/* menu  */}
       <MenuList>
