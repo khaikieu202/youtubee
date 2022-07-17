@@ -1,45 +1,133 @@
 import React from "react";
-import {
-  HomeOutlined,
-  CompassOutlined,
-  PlaySquareOutlined,
-  TeamOutlined,
-} from "@ant-design/icons";
+import styled from "styled-components";
+import { HomeFilled, UserOutlined } from "@ant-design/icons";
 
 import "./style.css";
 import Logo from "../../assets/images/logow.png";
 
-const Menu = () => {
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.bgLighter};
+  color: ${({ theme }) => theme.text};
+  flex: 1;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+`;
+
+const LogoDiv = styled.div.attrs({ className: "logo" })`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 16px;
+  margin-top: 16px;
+  margin-bottom: 25px;
+`;
+
+const MenuList = styled.div`
+  margin-left: 16px;
+  margin-right: 16px;
+`;
+
+const MenuItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 7.5px 0px;
+`;
+
+const SpaceLine = styled.div`
+  border: 0.5px solid ${({ theme }) => theme.soft};
+  margin: 15px 0;
+`;
+
+const SignIn = styled.div.attrs({ className: "sign-in" })``;
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
-    <div className="menu-container">
+    <Container>
       {/* logo  */}
-      <div className="logo">
+      <LogoDiv>
         <img src={Logo} alt="logo" />
-        <h1>Youtubee</h1>
-      </div>
+        <p>Youtubee</p>
+      </LogoDiv>
 
       {/* menu  */}
-      <div className="menu-list">
-        <div className="menu-item">
-          <HomeOutlined />
-          <h4>Home</h4>
+      <MenuList>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <SpaceLine />
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <SpaceLine />
+        <div className="sign-in">
+          <p>Sign in to like videos, comment, and subscribe.</p>
+          <button>
+            <UserOutlined /> Sign In
+          </button>
         </div>
-        <div className="menu-item">
-          <CompassOutlined />
-          <h4>Explore</h4>
-        </div>
-        <div className="menu-item">
-          <PlaySquareOutlined />
-          <h4>Shorts</h4>
-        </div>
-        <div className="menu-item">
-          <TeamOutlined />
-          <h4>Subscriptions</h4>
-        </div>
-        <hr>
-        <div className="menu-item"></div>
-      </div>
-    </div>
+        <SpaceLine />
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <SpaceLine />
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem>
+          <HomeFilled />
+          <p>Home</p>
+        </MenuItem>
+        <MenuItem onClick={() => setDarkMode(!darkMode)}>
+          <HomeFilled />
+          <p>{darkMode ? "Light Mode" : "Dark Mode"}</p>
+        </MenuItem>
+      </MenuList>
+    </Container>
   );
 };
 

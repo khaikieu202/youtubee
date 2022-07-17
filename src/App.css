@@ -8,17 +8,25 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  font-size: 14px;
 }
 
-.container {
-  display: flex;
+*::-webkit-scrollbar {
+  width: 16px;
 }
 
-.main {
-  flex: 7;
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
 }
 
-.wrapper {
-  background-color: #f9f9f9;
-  height: calc(100% - 60px);
+*::-webkit-scrollbar-thumb {
+  height: 56px;
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
