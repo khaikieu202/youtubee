@@ -10,10 +10,9 @@ const Container = styled.div`
   color: ${({ theme }) => theme.text};
   flex: 1;
   height: 100vh;
-  overflow: scroll;
-  overflow-x: hidden;
   position: sticky;
   top: 0;
+  overflow-y: scroll;
 `;
 
 const LogoDiv = styled.div.attrs({ className: "logo" })`
