@@ -36,6 +36,10 @@ const MenuItem = styled.div`
   gap: 20px;
   cursor: pointer;
   padding: 7.5px 0px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 
 const SpaceLine = styled.div`
@@ -82,9 +86,14 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <SpaceLine />
         <div className="sign-in">
           <p>Sign in to like videos, comment, and subscribe.</p>
-          <button>
-            <UserOutlined /> Sign In
-          </button>
+          <Link
+            to="/sign-in"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <button>
+              <UserOutlined /> Sign In
+            </button>
+          </Link>
         </div>
         <SpaceLine />
         <MenuItem>

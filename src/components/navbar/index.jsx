@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import "./style.css";
 import { UserOutlined, SearchOutlined } from "@ant-design/icons";
@@ -63,10 +64,15 @@ const NavBar = () => {
           <SearchOutlined />
         </Search>
 
-        <ButtonSignIn>
-          <UserOutlined />
-          Sign In
-        </ButtonSignIn>
+        <Link
+          to="/sign-in"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <ButtonSignIn>
+            <UserOutlined />
+            Sign In
+          </ButtonSignIn>
+        </Link>
       </Wrapper>
     </Container>
   );

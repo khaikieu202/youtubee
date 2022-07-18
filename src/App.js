@@ -8,6 +8,7 @@ import NavBar from "./components/navbar";
 import { darkTheme, lightTheme } from "./utils/Theme.js";
 import Home from "./pages/home";
 import Video from "./pages/video";
+import SignIn from "./pages/signin";
 
 const Container = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ const App = () => {
             <Wrapper>
               <Routes path="/">
                 <Route index element={<Home />} />
+                <Route path="sign-in" element={<SignIn />} />
                 <Route path="video">
                   <Route path=":id" element={<Video />} />
                 </Route>
